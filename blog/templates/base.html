@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Page</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Name: <input type="text" name="name" required></p>
+        <p>Email: <input type="email" name="email" required></p>
+        <p>Message:<br><textarea name="message" required></textarea></p>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+
