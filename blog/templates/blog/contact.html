@@ -1,23 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Contact Page</title>
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% block title %}Contact{% endblock %}
 
-    <h1>Contact Us</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <p>Name: <input type="text" name="name" required></p>
-        <p>Email: <input type="email" name="email" required></p>
-        <p>Message:<br><textarea name="message" required></textarea></p>
-        <button type="submit">Send</button>
-    </form>
-    
-    <p><a href="/">Back to Home</a></p>
-
-</body>
-</html>
+{% block content %}
+<div class="text-center">
+  <h1>Contact {{ title }}</h1>
+  <p>Get in touch with us.</p>
+</div>
+{% endblock %}

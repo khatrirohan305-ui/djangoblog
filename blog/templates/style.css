@@ -1,9 +1,17 @@
 body {
     background-color: #f4f6f9;
     font-family: sans-serif;
-    padding: 40px;
 }
+
 h1 {
     color: #007bff;
 }
 
+.post-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
