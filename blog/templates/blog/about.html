@@ -6,4 +6,9 @@
   <h1>About {{ title }}</h1>
   <p>Our goal is to provide valuable resources and insights to the Django community.</p>
 </div>
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'about' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'about' %}">About</a>
+
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'contact' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'contact' %}">Contact</a>
+
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'my_posts' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'my_posts' %}">My Posts</a>
 {% endblock %}

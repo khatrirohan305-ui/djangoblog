@@ -97,6 +97,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Login: reuse the admin login page for protected views
-LOGIN_URL = '/admin/login/'
+# Login
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {messages.ERROR: "danger"}
+
+# Password reset emails are printed in the terminal (local development only)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

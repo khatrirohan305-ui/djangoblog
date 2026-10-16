@@ -6,4 +6,9 @@
   <h1>Contact {{ title }}</h1>
   <p>Get in touch with us.</p>
 </div>
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'about' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'about' %}">About</a>
+
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'contact' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'contact' %}">Contact</a>
+
+<a class="nav-link text-white {% if request.resolver_match.url_name == 'my_posts' %}fw-bold text-decoration-underline{% endif %}" href="{% url 'my_posts' %}">My Posts</a>
 {% endblock %}

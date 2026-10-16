@@ -1,10 +1,20 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.core.files.uploadedfile import UploadedFile
 
 from .models import Post
 
 MAX_IMAGE_SIZE_MB = 2
 ALLOWED_IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".gif", ".webp")
+
+
+class RegisterForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ["username", "email", "password1", "password2"]
 
 
 def validate_uploaded_image(image):
